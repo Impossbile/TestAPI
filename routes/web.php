@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-Use App\Http\Controllers\APIController;
+use App\Http\Controllers\APIController;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +13,21 @@ Use App\Http\Controllers\APIController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('books/import', [APIController::class, 'import']);
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/books/import',[APIController::class, 'export']);
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/clients', function (Request $request) {
+    return view('clients', [
+        'clients' => $request->user()->clients
+
+    ]);
+        })->middleware(['auth'])->name('dashboard.clients');
+
+
+require __DIR__.'/auth.php';

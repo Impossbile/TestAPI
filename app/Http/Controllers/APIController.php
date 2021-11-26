@@ -57,7 +57,8 @@ class APIController extends Controller
         Return Desk::where('name',$name)->get();
 
     }
-public function export(Request $request){
+
+public function import(Request $request){
     \Maatwebsite\Excel\Facades\Excel::import(new UsersImport(),$request->file('files'));
 
     return redirect('/')->with('success', 'All good!');

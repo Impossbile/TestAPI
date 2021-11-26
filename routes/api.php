@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Models\User;
 use \App\Http\Controllers\APIController;
 use  \App\Http\Controllers\AuthController;
+use App\Models\Desk;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +25,16 @@ Route::apiResources([
 
 ]);
 
-Route::group(['middleware'=>['auth:sanctum']], function()
-{
-    Route::middleware('auth_api')->match(['post', 'get'], '/user/{id}', [APIController::class, 'index'])->name('index');
+//Route::group(['middleware'=>['auth:sanctum']], function()
 
-    Route::get('/desks/search/{name}', [APIController::class, 'search']);
+    Route::middleware('auth:api')->match(['post', 'get'], '/user/{id}', [APIController::class, 'index'])->name('index');
+
+   // Route::middleware('auth:api')->post('/desks/new', function (Request $request){
+
+     //  return $request ->user()->Desk()-create($request->only(['title','content']));
+ //  });
+
+        Route::middleware('auth:api')->get('/desks/search/{name}', [APIController::class, 'search']);
 
     Route::post('/desks/store', [APIController::class, 'store']);
 
@@ -39,4 +45,4 @@ Route::group(['middleware'=>['auth:sanctum']], function()
     Route::put('/desks/update/{id}', [APIController::class, 'update']);
 
     Route::put('/desks/delete/{id}', [APIController::class, 'destroy']);
-});
+
