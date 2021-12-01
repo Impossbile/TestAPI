@@ -16,12 +16,13 @@ use App\Imports\UsersImport;
 class APIController extends Controller
 {
     public function index(Request $request,$id){
-        if ($request->accepts(['text/html', 'application/json'])) {
+
             $user = Models\User::find($id);
-            if (!$user) return response('Такой пользователь не найден', 404);
             return $user;
+
+
         }
-    }
+
 
 
 
