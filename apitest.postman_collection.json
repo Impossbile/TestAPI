@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "0b8ad709-5aac-4312-96bb-19734f99fd81",
+		"name": "apitest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "danialunev@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Dania201063210",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://testapi/login",
+					"protocol": "http",
+					"host": [
+						"testapi"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create client",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Amity Smith\n",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://testapi/oauth/clients",
+					"protocol": "http",
+					"host": [
+						"testapi"
+					],
+					"path": [
+						"oauth",
+						"clients"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://testapi/dashboard/clients",
+					"protocol": "http",
+					"host": [
+						"testapi"
+					],
+					"path": [
+						"dashboard",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authorize client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://testapi/oauth/authorize?client_id=6&redirect_uri=http://laravel-app.test/callback&response_type=code&scope&state=asdfasdfasdfasdfasdfadfasdfasdfasdfasdfasdfasdfasdfasdf",
+					"protocol": "http",
+					"host": [
+						"testapi"
+					],
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "6"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://laravel-app.test/callback"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "scope",
+							"value": null
+						},
+						{
+							"key": "state",
+							"value": "asdfasdfasdfasdfasdfadfasdfasdfasdfasdfasdfasdfasdfasdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://laravel-app.test/callback?code=def502008069ebec9fda26ad7b4ec895749fc7d1c4fd09ef5c35a6996e2f3b420f2df43314caf6b84cba4ca84bf1c6b728b7ae81c49abee5f6baad8699e2f1418944b267ac17cd04d4d5e340dfd9f508d01c6880f2e35a657436f6b2a6d86a6b8aa0c81346fdedd1a31dcfcd6d9f068ca7cf3dbd462a5d1e607de572870cc2c7fda7588cf60070f95d808294d2ea88db0502cabec4fc49bb1198f37b17f11d6f4289eabacef2d2885669184027aae374d64d7b51c8a77d5edab80c4890d562df1a5b8e4d4608bdaf97bcaeb31ea67d8c744f2983a2ee6161c49092eaa6c31333e3f3e4e0803728778ee1e3f3745503cde2d9fed266f084bfed9651e5ee644744527f81dd40b7342c7472220cd089a030fd16c8af955d532eb34bc0bc5cf6ae85800e9d1381945149edb42456c864ade6eeb3cf5233bcd2c9b10c5c90f99ede9b274483f354369ab7eaf0c871edb03b44752c996857a78a021ab24649d617769f&state=asdfasdfasdfasdfasdfadfasdfasdfasdfasdfasdfasdfasdfasdf",
+					"protocol": "http",
+					"host": [
+						"laravel-app",
+						"test"
+					],
+					"path": [
+						"callback"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "def502008069ebec9fda26ad7b4ec895749fc7d1c4fd09ef5c35a6996e2f3b420f2df43314caf6b84cba4ca84bf1c6b728b7ae81c49abee5f6baad8699e2f1418944b267ac17cd04d4d5e340dfd9f508d01c6880f2e35a657436f6b2a6d86a6b8aa0c81346fdedd1a31dcfcd6d9f068ca7cf3dbd462a5d1e607de572870cc2c7fda7588cf60070f95d808294d2ea88db0502cabec4fc49bb1198f37b17f11d6f4289eabacef2d2885669184027aae374d64d7b51c8a77d5edab80c4890d562df1a5b8e4d4608bdaf97bcaeb31ea67d8c744f2983a2ee6161c49092eaa6c31333e3f3e4e0803728778ee1e3f3745503cde2d9fed266f084bfed9651e5ee644744527f81dd40b7342c7472220cd089a030fd16c8af955d532eb34bc0bc5cf6ae85800e9d1381945149edb42456c864ade6eeb3cf5233bcd2c9b10c5c90f99ede9b274483f354369ab7eaf0c871edb03b44752c996857a78a021ab24649d617769f"
+						},
+						{
+							"key": "state",
+							"value": "asdfasdfasdfasdfasdfadfasdfasdfasdfasdfasdfasdfasdfasdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getting tokens",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "LifOEg0piiaOVz3ZRtCZQ28k7FnDuVVW91kKpWTu",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://laravel-app.test/callback",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "def502008069ebec9fda26ad7b4ec895749fc7d1c4fd09ef5c35a6996e2f3b420f2df43314caf6b84cba4ca84bf1c6b728b7ae81c49abee5f6baad8699e2f1418944b267ac17cd04d4d5e340dfd9f508d01c6880f2e35a657436f6b2a6d86a6b8aa0c81346fdedd1a31dcfcd6d9f068ca7cf3dbd462a5d1e607de572870cc2c7fda7588cf60070f95d808294d2ea88db0502cabec4fc49bb1198f37b17f11d6f4289eabacef2d2885669184027aae374d64d7b51c8a77d5edab80c4890d562df1a5b8e4d4608bdaf97bcaeb31ea67d8c744f2983a2ee6161c49092eaa6c31333e3f3e4e0803728778ee1e3f3745503cde2d9fed266f084bfed9651e5ee644744527f81dd40b7342c7472220cd089a030fd16c8af955d532eb34bc0bc5cf6ae85800e9d1381945149edb42456c864ade6eeb3cf5233bcd2c9b10c5c90f99ede9b274483f354369ab7eaf0c871edb03b44752c996857a78a021ab24649d617769f",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://testapi/oauth/token",
+					"protocol": "http",
+					"host": [
+						"testapi"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checking for authorizationuser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI3IiwianRpIjoiZjU4NjExYzJiMzk5ZDM3NTE4ZjE1OTNiZjhhNjI0MzNlZjVhNGE4YjMwZWFjOTgzZmViYjYyNjA3NjRlMTg4ZDU5ZTE4N2ZkYzk1NjFhZjciLCJpYXQiOjE2MzgxOTAzNDguMTEyODI3LCJuYmYiOjE2MzgxOTAzNDguMTEyODMzLCJleHAiOjE2Njk3MjYzNDcuODcwOTA0LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.iXkgCkSbJBA9SpC7rdMMZJNFODjfvvvxMUYf30ZZSOvSZilqmPccp2d8u0q189Oo1PwC9Bxtca2x95ZAo37SXtwCzq5L5v9uGv3DOl8M6u9XDS_8bvETpq3yc-5ZkmBjDSpNuzLPlze9OuKGKE8WKVx80xZZ9s0RGrx4KYwwlVS1ginihTX9ncFYVywPPYvckVvHBBiN8L1frNLCe0FICgvE7MEvVQp08JUDX6pxkcmMnqrbi9wfgMrCD-jIJ1RlCEwInmuygxzc_RSJvfnLonWV2plb3lwiiyEpAAaYAmg9De9ppoNfQKHn4RYTQKQ2a4cHhM6HhoWUWxPEx95N8Rdxwirj-Sv_zexR7svweVT00kLx_i3NUKff73hWv9ywLo5JdKvV6hehAIiy9MCnPUruGNhR3R_E6lnGP3MyhhDAFEv4NrWQev_GaaJVAQhlzXgoq2F_Q1x93XaKZmWBVP3t9gGqEpuSseRvs5qO5rphLZqvPV_YrjKm_HI7XSP57obAUW7A8JasekYMt-fuDkqR-xcVUdGXh-lHgh4XB9SjJgDcS-vXUPg1I-mgJ27dhRmarsxFoEizTGOFlz1gvfpkzzOORll-_bpcrTuENXZQ7ePtw5Z9wkspa6SVqiQKu0zhTO39LtAoC18sf-fuIM_3LFuD310NcngCukKXpig",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://testapi/api/V1/user/1",
+					"protocol": "http",
+					"host": [
+						"testapi"
+					],
+					"path": [
+						"api",
+						"V1",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
