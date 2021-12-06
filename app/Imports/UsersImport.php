@@ -27,8 +27,7 @@ class UsersImport implements ToModel
     */
     public function model(array $row)
     {
-
-        return new ParseModel([
+        return( new ParseModel([
             'numberofWorkOrder' =>$row[0],
             'createdate'=>$row[1],
             'SLA'=>$row[2],
@@ -38,8 +37,7 @@ class UsersImport implements ToModel
 
 
 
-
-        ]);
+        ]));
 
     }
 }

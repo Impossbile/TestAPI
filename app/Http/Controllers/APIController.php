@@ -59,11 +59,7 @@ class APIController extends Controller
 
     }
 
-public function import(Request $request){
-    \Maatwebsite\Excel\Facades\Excel::import(new UsersImport(),$request->file('files'));
 
-    return redirect('/')->with('success', 'All good!');
 
-}
 }
 

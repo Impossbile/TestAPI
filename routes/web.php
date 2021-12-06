@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ExcelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,7 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('books/import', [APIController::class, 'import']);
+Route::post('books/import', [ExcelController::class, 'import']);
 Route::get('/', function () {
     return view('welcome');
 });

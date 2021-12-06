@@ -68,6 +68,13 @@ class Handler extends ExceptionHandler
                 ], 404);
             }
         });
+        $this->renderable(function (\InvalidArgumentException $e, $request) {
+            if ($request->is('api/*')) {
+                return response()->json([
+                    'message' => 'Error with sent data'
+                ], 404);
+            }
+        });
 
     }}
 

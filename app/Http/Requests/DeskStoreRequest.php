@@ -24,7 +24,9 @@ class DeskStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required | max:225',
+            'name'=> 'required|unique:desks|max:255|string',
+            'email'=>'required|unique:users|max:255|string',
+            'password'=>'required|max:255|string',
         ];
     }
 }
