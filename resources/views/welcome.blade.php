@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<form action="/books/import" method = "post" enctype="multipart/form-data">
+<form action="read/xlsx" method = "post" enctype="multipart/form-data">
     @csrf
     <input type="file" name="files">
     <input type="submit">
