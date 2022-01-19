@@ -6,7 +6,8 @@ use \App\Models\User;
 use \App\Http\Controllers\APIController;
 use  \App\Http\Controllers\AuthController;
 use App\Models\Desk;
-
+use  App\Http\Controllers\Api\V1\DeskController;
+use App\Http\Controllers\API\V1\CardsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -27,4 +28,6 @@ Route::group(['middleware' => ['auth:api']], static function () {
         'desks' => DeskController::class,
 
     ]);
+    Route::apiResources([
+        'cards' => CardsController::class]);
 });

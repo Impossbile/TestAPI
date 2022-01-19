@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DeskStoreRequest extends FormRequest
+class CardStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class DeskStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required|unique:desks|max:255|string',
-            'email'=>'required|unique:users|max:255|string',
-            'password'=>'required|max:255|string',
+            'name'=> 'required|max:255|string',
+            'email'=> 'required|max:255|string',
         ];
     }
 }

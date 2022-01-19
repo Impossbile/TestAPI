@@ -16,9 +16,9 @@ class CreateParseModelsTable extends Migration
     {
         Schema::create('parse_models', function (Blueprint $table) {
             $table->id();
-            $table->string('numberofWorkOrder');
-            $table->dateTime('createdate');
-            $table->dateTime('SLA');
+            $table->string('numberofWorkOrder')->nullable();
+            $table->string('createdate')->nullable();
+            $table->string('SLA')->nullable();
         });
     }
 
