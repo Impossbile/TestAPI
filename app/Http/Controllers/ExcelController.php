@@ -32,6 +32,7 @@ class ExcelController extends Controller
 {
     public function readxlsx()
     {
+//function getValue
         header('Content-Type: application/json');
         $reader = IOFactory::createReader("Xlsx");
         $speedsheet = $reader->load("C:\Users\admin\Desktop\Справка.xlsx");
@@ -40,6 +41,7 @@ class ExcelController extends Controller
 
         //$sheet =$speedsheet->getActiveSheet()->getCell('B12')->getValue();
         // dd($sheet);
+        // function createArrays
         $root=[
             'struct' => [],
             'projects'=>[],
