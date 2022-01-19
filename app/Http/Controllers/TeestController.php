@@ -77,6 +77,9 @@ class TeestController extends Controller
 
         }
         $struct = json_encode($struct, JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE);
+        $struct = json_encode($struct, JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE);
+        $struct = json_encode($struct, JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE);
+        $struct = json_encode($struct, JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE);
 
       //  print_r($struct);
 
